@@ -39,6 +39,7 @@ const callsToAction = [
 import {MaxWidthWrapper} from "@/components/max-width-wrapper"
 import Link from "next/link"
 import {Button} from "@/components/ui/button";
+import scrollToSection from "@/utils/scrollTo";
 
 export const Navbar = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -135,7 +136,7 @@ export const Navbar = () => {
                     </a>
                 </PopoverGroup>
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                    <Button>Свържете се с нас</Button>
+                    <Button onClick={() => scrollToSection("contact")}>Свържете се с нас</Button>
                 </div>
                 <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
                     <div className="fixed inset-0 z-50"/>

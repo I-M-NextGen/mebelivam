@@ -1,4 +1,6 @@
 import React from 'react';
+import {Subheading} from "@/components/ui/subheading";
+import {Heading} from "@/components/ui/heading";
 
 export default function FAQ() {
 
@@ -38,12 +40,12 @@ export default function FAQ() {
             <div className="max-w-6xl mx-auto">
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <h3 className="text-orange-400 text-lg font-medium mb-4">
+                    <Subheading>
                         Как Работим
-                    </h3>
-                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+                    </Subheading>
+                    <Heading>
                         Често Задавани Въпроси
-                    </h2>
+                    </Heading>
                 </div>
 
                 {/* FAQ Items */}

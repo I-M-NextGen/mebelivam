@@ -1,4 +1,6 @@
 import React from 'react';
+import {Heading} from "@/components/ui/heading";
+import {Subheading} from "@/components/ui/subheading";
 
 const Info = () => {
     return (
@@ -6,11 +8,11 @@ const Info = () => {
             <div className="max-w-6xl mx-auto">
                 {/* Header */}
                 <div className="text-center mb-12">
-                    <p className="text-orange-500 text-lg font-medium mb-4">Информация</p>
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                    <Subheading>Информация</Subheading>
+                    <Heading>
                         Какво следва, след като оставиш данните<br />
                         си СЕГА?
-                    </h2>
+                    </Heading>
                     <p className="text-gray-600 text-lg max-w-2xl mx-auto">
                         След като попълниш формата, ето какво можеш да очакваш:
                     </p>

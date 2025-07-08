@@ -30,7 +30,7 @@ const Hero = () => {
 
                 {/* Call to Action Buttons */}
                 <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-4 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+                    <button onClick={()=>scrollToSection("contact")} className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-4 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
                         Свържи се с нас
                     </button>
                     <button onClick={() => scrollToSection("info")}  className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-900 font-semibold py-4 px-8 rounded-lg text-lg transition-all duration-300 flex items-center gap-2">

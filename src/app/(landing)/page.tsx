@@ -17,11 +17,11 @@ const Page = () => {
       <Hero/>
     </div>
     <section id="info"><Info/></section>
-    <section><Services/></section>
+    <section id="services"><Services/></section>
     <section><ContactFormButton/></section>
-    <section><About/></section>
-    <section><FAQ/></section>
-    <section><Contact/></section>
+    <section id="about"><About/></section>
+    <section id="faq"><FAQ/></section>
+    <section id="contact"><Contact/></section>
     <section><Footer/></section>
 
   </>

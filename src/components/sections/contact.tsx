@@ -1,5 +1,7 @@
 "use client"
 import React, { useState } from 'react';
+import {Heading} from "@/components/ui/heading";
+import {Subheading} from "@/components/ui/subheading";
 
 export default function Contact() {
     const [formData, setFormData] = useState({
@@ -28,12 +30,12 @@ export default function Contact() {
             <div className="max-w-6xl mx-auto">
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <h3 className="text-orange-400 text-lg font-medium mb-4">
+                    <Subheading>
                         Свържете се с нас
-                    </h3>
-                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+                    </Subheading>
+                    <Heading>
                         Ето какво предлагаме
-                    </h2>
+                    </Heading>
                 </div>
 
                 {/* Content Grid */}

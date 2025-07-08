@@ -1,4 +1,6 @@
 import React from 'react';
+import {Heading} from "@/components/ui/heading";
+import {Subheading} from "@/components/ui/subheading";
 
 export default function About() {
     return (
@@ -26,12 +28,12 @@ export default function About() {
                         <div className="space-y-6">
                             {/* Header */}
                             <div>
-                                <h3 className="text-orange-400 text-lg font-medium mb-3">
+                                <Subheading>
                                     За Нас
-                                </h3>
-                                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
+                                </Subheading>
+                                <Heading>
                                     Кой е Майстор Васил Витанов?
-                                </h2>
+                                </Heading>
                             </div>
 
                             {/* Content */}

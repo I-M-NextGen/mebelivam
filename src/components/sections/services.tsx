@@ -1,5 +1,7 @@
 import React from 'react';
 import { Ruler, Paintbrush, Hammer } from 'lucide-react';
+import {Heading} from "@/components/ui/heading";
+import {Subheading} from "@/components/ui/subheading";
 
 export default function Services() {
     return (
@@ -7,12 +9,12 @@ export default function Services() {
             <div className="max-w-6xl mx-auto">
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <h2 className="text-orange-400 text-lg font-medium mb-4">
+                    <Subheading>
                         Как Работим
-                    </h2>
-                    <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+                    </Subheading>
+                    <Heading>
                         Разкриваме процеса на изработка
-                    </h1>
+                    </Heading>
                 </div>
 
                 {/* Steps */}

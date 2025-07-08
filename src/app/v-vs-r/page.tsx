@@ -1,6 +1,9 @@
 "use client"
 import React, { useState, useRef, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import ContactFormButton from "@/components/ui/contact-form-button";
+import {Subheading} from "@/components/ui/subheading";
+import {Heading} from "@/components/ui/heading";
 
 export default function Page() {
     const [sliderPosition, setSliderPosition] = useState(50);
@@ -50,13 +53,13 @@ export default function Page() {
             <div className="max-w-6xl mx-auto">
                 {/* Header */}
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl md:text-4xl font-bold text-orange-500 mb-4 tracking-wide">
+                    <Subheading>
                         ВИЗУАЛИЗАЦИЯ СРЕЩУ РЕАЛНОСТ
-                    </h2>
-                    <p className="text-xl md:text-2xl text-gray-800 font-medium leading-relaxed">
+                    </Subheading>
+                    <Heading>
                         Как изглежда една кухня, проектирана на компютър,<br />
                         в сравнение с реалността...
-                    </p>
+                    </Heading>
                 </div>
 
                 {/* Comparison Container */}
@@ -135,6 +138,7 @@ export default function Page() {
                     </p>
                 </div>
             </div>
+            <ContactFormButton/>
         </section>
     );
 }
