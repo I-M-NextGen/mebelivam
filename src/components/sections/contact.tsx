@@ -11,7 +11,9 @@ export default function Contact() {
         message: ''
     });
 
-    const handleInputChange = (e) => {
+    const handleInputChange = (
+        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    ) => {
         const { name, value } = e.target;
         setFormData(prev => ({
             ...prev,
@@ -19,7 +21,7 @@ export default function Contact() {
         }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
         // Handle form submission here
         console.log('Form submitted:', formData);
