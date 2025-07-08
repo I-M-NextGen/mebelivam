@@ -14,12 +14,12 @@ export default function Page() {
     const beforeImage = "https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=800&h=600&fit=crop";
     const afterImage = "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600&fit=crop";
 
-    const handleMouseDown = (e) => {
+    const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
         setIsDragging(true);
         updateSliderPosition(e);
     };
 
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: MouseEvent) => {
         if (!isDragging) return;
         updateSliderPosition(e);
     };
@@ -28,10 +28,10 @@ export default function Page() {
         setIsDragging(false);
     };
 
-    const updateSliderPosition = (e) => {
+    const updateSliderPosition = (e: MouseEvent | React.MouseEvent<HTMLDivElement>) => {
         if (!containerRef.current) return;
 
-        const rect = containerRef.current.getBoundingClientRect();
+        const rect = (containerRef.current as HTMLDivElement).getBoundingClientRect();
         const x = e.clientX - rect.left;
         const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100));
         setSliderPosition(percentage);
@@ -46,7 +46,7 @@ export default function Page() {
                 document.removeEventListener('mouseup', handleMouseUp);
             };
         }
-    }, [isDragging]);
+    }, [isDragging, handleMouseMove]);
 
     return (
         <section className="py-16 px-6 bg-gray-50">
