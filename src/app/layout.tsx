@@ -13,7 +13,7 @@ const eb_garamond = EB_Garamond({
 })
 
 export const metadata: Metadata = {
-  title: "mebelivam-img",
+  title: "MebeliVam",
   description: "",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 }

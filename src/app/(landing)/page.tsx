@@ -1,8 +1,14 @@
+"use client"
 import Hero from "@/components/sections/hero";
-import {Navbar} from "@/components/sections/navbar";
 import Image from "next/image";
 import React from "react";
 import Info from "@/components/sections/info";
+import Services from "@/components/sections/services";
+import ContactFormButton from "@/components/ui/contact-form-button";
+import About from "@/components/sections/about";
+import FAQ from "@/components/sections/faq";
+import Contact from "@/components/sections/contact";
+import Footer from "@/components/sections/footer";
 
 const Page = () => {
   return <>
@@ -10,7 +16,14 @@ const Page = () => {
       <Image className="absolute inset-0 bg-cover bg-center bg-no-repeat brightness-50" src="/mebelivam-img/real-images/kitchen.png" alt="hero-bg" width={10000} height={10000}/>
       <Hero/>
     </div>
-    <Info/>
+    <section id="info"><Info/></section>
+    <section><Services/></section>
+    <section><ContactFormButton/></section>
+    <section><About/></section>
+    <section><FAQ/></section>
+    <section><Contact/></section>
+    <section><Footer/></section>
+
   </>
 }
 export default Page

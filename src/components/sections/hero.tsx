@@ -1,6 +1,9 @@
+"use client"
 import React from 'react';
 import Image from "next/image";
 import {Heading} from "@/components/ui/heading";
+import Link from "next/link";
+import scrollToSection from "@/utils/scrollTo";
 
 const Hero = () => {
     return (
@@ -30,13 +33,13 @@ const Hero = () => {
                     <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-4 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
                         Свържи се с нас
                     </button>
-
-                    <button className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-900 font-semibold py-4 px-8 rounded-lg text-lg transition-all duration-300 flex items-center gap-2">
+                    <button onClick={() => scrollToSection("info")}  className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-900 font-semibold py-4 px-8 rounded-lg text-lg transition-all duration-300 flex items-center gap-2">
                         Научи повече
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
                     </button>
+
                 </div>
             </div>
 
