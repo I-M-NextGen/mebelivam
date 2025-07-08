@@ -1,8 +1,6 @@
 "use client"
 import React from 'react';
-import Image from "next/image";
 import {Heading} from "@/components/ui/heading";
-import Link from "next/link";
 import scrollToSection from "@/utils/scrollTo";
 
 const Hero = () => {
