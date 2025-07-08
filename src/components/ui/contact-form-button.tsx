@@ -20,7 +20,12 @@ export default function ContactFormButton() {
     );
 }
 
-function ContactButton({ onClick, className = "" }) {
+type ContactButtonProps = {
+    onClick?: () => void;
+    className?: string;
+};
+
+function ContactButton({ onClick, className = "" }: ContactButtonProps) {
     const handleClick = () => {
         if (onClick) {
             onClick();
