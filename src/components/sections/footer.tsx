@@ -46,9 +46,9 @@ export default function Footer() {
                     <div>
                         <h3 className="text-xl font-semibold text-gray-900 mb-6">ПОЛЕЗНИ ВРЪЗКИ</h3>
                         <nav className="space-y-4">
-                            <a href="#" className="block text-gray-600 hover:text-orange-500 transition-colors">
+                            <Link href="/privacy-policy" className="block text-gray-600 hover:text-orange-500 transition-colors">
                                 Политика за поверителност
-                            </a>
+                            </Link>
                         </nav>
                     </div>
 

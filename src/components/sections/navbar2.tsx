@@ -25,20 +25,19 @@ import {ChevronDownIcon, PhoneIcon, PlayCircleIcon} from '@heroicons/react/20/so
 import Image from "next/image"
 
 const products = [
-    {name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon},
-    {name: 'Engagement', description: 'Speak directly to your customers', href: '#', icon: CursorArrowRaysIcon},
-    {name: 'Security', description: 'Your customers’ data will be safe and secure', href: '#', icon: FingerPrintIcon},
-    {name: 'Integrations', description: 'Connect with third-party tools', href: '#', icon: SquaresPlusIcon},
-    {name: 'Automations', description: 'Build strategic funnels that will convert', href: '#', icon: ArrowPathIcon},
+    {name: 'Снимки на проекти', description: 'Get a better understanding of your traffic', href: '/images', icon: LucideImages},
+    {name: 'Визуализация срещу реалност', description: 'Speak directly to your customers', href: '/v-vs-r', icon: SquareDashedMousePointer},
 ]
 const callsToAction = [
-    {name: 'Watch demo', href: '#', icon: PlayCircleIcon},
-    {name: 'Contact sales', href: '#', icon: PhoneIcon},
+    {name: 'Виж видео', href: '#video', icon: PlayCircleIcon},
+    {name: 'Свържи се с нас', href: '#contact', icon: PhoneIcon},
 ]
+
 
 import {MaxWidthWrapper} from "@/components/max-width-wrapper"
 import Link from "next/link"
 import {Button} from "@/components/ui/button";
+import {LucideImages, SquareDashedMousePointer} from "lucide-react";
 
 export const Navbar2 = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -90,18 +89,18 @@ export const Navbar2 = () => {
 
                         <PopoverPanel
                             transition
-                            className="absolute left-1/2 z-10 mt-3 w-screen max-w-md -translate-x-1/2 overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5 transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in"
+                            className="absolute left-1/2 z-10 mt-3 w-screen max-w-md -translate-x-1/2 overflow-hidden rounded-3xl bg-orange-300 shadow-lg ring-1 ring-gray-900/5 transition data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in"
                         >
                             <div className="p-4">
                                 {products.map((item) => (
                                     <div
                                         key={item.name}
-                                        className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-gray-50"
+                                        className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm/6 hover:bg-orange-100"
                                     >
                                         <div
-                                            className="flex size-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                                            className="flex size-11 flex-none items-center justify-center rounded-lg bg-orange-50 group-hover:bg-white">
                                             <item.icon aria-hidden="true"
-                                                       className="size-6 text-gray-600 group-hover:text-indigo-600"/>
+                                                       className="size-6 text-gray-600 group-hover:text-orange-600"/>
                                         </div>
                                         <div className="flex-auto">
                                             <a href={item.href} className="block font-semibold text-gray-900">
@@ -113,7 +112,7 @@ export const Navbar2 = () => {
                                     </div>
                                 ))}
                             </div>
-                            <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
+                            <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-orange-100">
                                 {callsToAction.map((item) => (
                                     <a
                                         key={item.name}
