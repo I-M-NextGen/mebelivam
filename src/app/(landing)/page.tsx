@@ -1,6 +1,5 @@
 "use client"
 import Hero from "@/components/sections/hero";
-import Image from "next/image";
 import React from "react";
 import Info from "@/components/sections/info";
 import Services from "@/components/sections/services";

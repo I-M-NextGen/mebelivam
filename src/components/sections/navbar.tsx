@@ -13,10 +13,7 @@ import {
     PopoverPanel,
 } from '@headlessui/react'
 import {
-    ArrowPathIcon,
     Bars3Icon,
-    FingerPrintIcon,
-    SquaresPlusIcon,
     XMarkIcon,
 } from '@heroicons/react/24/outline'
 import {ChevronDownIcon, PhoneIcon, PlayCircleIcon} from '@heroicons/react/20/solid'
