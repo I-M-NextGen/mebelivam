@@ -4,8 +4,19 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import ContactFormButton from "@/components/ui/contact-form-button";
 import { Subheading } from "@/components/ui/subheading";
 import { Heading } from "@/components/ui/heading";
-import projectImages from "../images/project-images";
-import realImages from "../images/real-images";
+const projectImages = [
+    "/mebelivam-img/program-vs-real/1-our-kitchen-program.JPG",
+    "/mebelivam-img/program-vs-real/spaska-program.jpg",
+    "/mebelivam-img/program-vs-real/2-kitchen-program.JPG",
+    "/mebelivam-img/program-vs-real/3-kitchen-program.JPG",
+]
+const realImages = [
+    "/mebelivam-img/program-vs-real/1-our-kitchen-real.JPG",
+    "/mebelivam-img/program-vs-real/spaska-real.jpg",
+    "/mebelivam-img/program-vs-real/2-kitchen-real.JPG",
+    "/mebelivam-img/program-vs-real/3-kitchen-real.JPG",
+]
+
 
 export default function Page() {
     // Индекс на текущата двойка (визуализация/реалност)
