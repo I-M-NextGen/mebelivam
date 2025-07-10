@@ -33,7 +33,6 @@ import {MaxWidthWrapper} from "@/components/max-width-wrapper"
 import Link from "next/link"
 import {Button} from "@/components/ui/button";
 import {LucideImages, SquareDashedMousePointer} from "lucide-react";
-import scrollToSection from "@/utils/scrollTo";
 
 export const Navbar2 = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)

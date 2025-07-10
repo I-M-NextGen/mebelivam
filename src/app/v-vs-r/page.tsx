@@ -49,7 +49,7 @@ export default function Page() {
                 document.removeEventListener('mouseup', handleMouseUp);
             };
         }
-    }, [isDragging]);
+    }, [isDragging, handleMouseMove]);
 
     // Смяна на двойка - ресет на слайдера
     const goToPrev = () => {
