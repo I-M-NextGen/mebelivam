@@ -2,6 +2,7 @@ import React from 'react';
 import {Heading} from "@/components/ui/heading";
 import {Subheading} from "@/components/ui/subheading";
 import {PhoneCall, PhoneIncoming} from "lucide-react";
+import Image from "next/image";
 
 const Info = () => {
     return (
@@ -98,49 +99,11 @@ const Info = () => {
                     <div className="relative max-w-2xl mx-auto">
                         <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                             {/* Video Thumbnail */}
-                            <div className="aspect-video bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center relative">
-                                {/* Background Pattern */}
-                                <div className="absolute inset-0 opacity-10">
-                                    <svg className="w-full h-full" viewBox="0 0 100 100" fill="none">
-                                        <defs>
-                                            <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
-                                                <path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" strokeWidth="0.5"/>
-                                            </pattern>
-                                        </defs>
-                                        <rect width="100" height="100" fill="url(#grid)" />
-                                    </svg>
-                                </div>
-
-                                {/* Room Image Placeholder */}
-                                <div className="absolute right-0 top-0 w-1/2 h-full bg-gradient-to-l from-gray-600 to-transparent opacity-50"></div>
-
-                                {/* Logo and Content */}
-                                <div className="relative z-10 flex items-center justify-between w-full px-8">
-                                    <div className="text-left">
-                                        <h3 className="text-white text-4xl font-bold mb-2">MEBELI</h3>
-                                        <h3 className="text-white text-4xl font-bold mb-6">VAM</h3>
-                                        <button className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded transition-colors">
-                                            WATCH NOW
-                                        </button>
-                                    </div>
-
-                                    {/* Play Button */}
-                                    <div className="flex items-center justify-center">
-                                        <button className="w-20 h-20 bg-orange-500 hover:bg-orange-600 rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 shadow-lg">
-                                            <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                                                <path d="M8 5v14l11-7z"/>
-                                            </svg>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Decorative Orange Element */}
-                            <div className="absolute top-0 right-0 w-32 h-full bg-orange-500 rounded-l-full transform translate-x-16"></div>
-                        </div>
+                            <Image src="/mebelivam-img/how-we-do-it.png" width={1000} height={1000} alt="tumbnail"/>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     );
 };

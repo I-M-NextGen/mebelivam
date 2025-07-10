@@ -2,18 +2,22 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import ContactFormButton from "@/components/ui/contact-form-button";
-import {Subheading} from "@/components/ui/subheading";
-import {Heading} from "@/components/ui/heading";
+import { Subheading } from "@/components/ui/subheading";
+import { Heading } from "@/components/ui/heading";
+import projectImages from "../images/project-images";
+import realImages from "../images/real-images";
 
 export default function Page() {
+    // Индекс на текущата двойка (визуализация/реалност)
+    const [currentPair, setCurrentPair] = useState(0);
     const [sliderPosition, setSliderPosition] = useState(50);
     const [isDragging, setIsDragging] = useState(false);
-    const containerRef = useRef(null);
+    const containerRef = useRef<HTMLDivElement | null>(null);
 
-    // Sample images - replace with actual project images
-    const beforeImage = "https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=800&h=600&fit=crop";
-    const afterImage = "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600&fit=crop";
+    // Защитаваме се от различен брой снимки
+    const totalPairs = Math.min(projectImages.length, realImages.length);
 
+    // Слайдер логика
     const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
         setIsDragging(true);
         updateSliderPosition(e);
@@ -30,8 +34,7 @@ export default function Page() {
 
     const updateSliderPosition = (e: MouseEvent | React.MouseEvent<HTMLDivElement>) => {
         if (!containerRef.current) return;
-
-        const rect = (containerRef.current as HTMLDivElement).getBoundingClientRect();
+        const rect = containerRef.current.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100));
         setSliderPosition(percentage);
@@ -46,16 +49,24 @@ export default function Page() {
                 document.removeEventListener('mouseup', handleMouseUp);
             };
         }
-    }, [isDragging, handleMouseMove]);
+    }, [isDragging]);
+
+    // Смяна на двойка - ресет на слайдера
+    const goToPrev = () => {
+        setCurrentPair((prev) => (prev - 1 + totalPairs) % totalPairs);
+        setSliderPosition(50);
+    };
+    const goToNext = () => {
+        setCurrentPair((prev) => (prev + 1) % totalPairs);
+        setSliderPosition(50);
+    };
 
     return (
         <section className="py-16 px-6 bg-gray-50">
             <div className="max-w-6xl mx-auto">
                 {/* Header */}
                 <div className="text-center mb-12">
-                    <Subheading>
-                        ВИЗУАЛИЗАЦИЯ СРЕЩУ РЕАЛНОСТ
-                    </Subheading>
+                    <Subheading>ВИЗУАЛИЗАЦИЯ СРЕЩУ РЕАЛНОСТ</Subheading>
                     <Heading>
                         Как изглежда една кухня, проектирана на компютър,<br />
                         в сравнение с реалността...
@@ -73,7 +84,7 @@ export default function Page() {
                         <div
                             className="absolute inset-0 bg-cover bg-center"
                             style={{
-                                backgroundImage: `url(${beforeImage})`,
+                                backgroundImage: `url(${projectImages[currentPair]})`,
                                 clipPath: `polygon(0 0, ${sliderPosition}% 0, ${sliderPosition}% 100%, 0 100%)`
                             }}
                         />
@@ -82,7 +93,7 @@ export default function Page() {
                         <div
                             className="absolute inset-0 bg-cover bg-center"
                             style={{
-                                backgroundImage: `url(${afterImage})`,
+                                backgroundImage: `url(${realImages[currentPair]})`,
                                 clipPath: `polygon(${sliderPosition}% 0, 100% 0, 100% 100%, ${sliderPosition}% 100%)`
                             }}
                         />
@@ -108,22 +119,26 @@ export default function Page() {
                         <div className="absolute top-4 right-4 bg-black bg-opacity-60 text-white px-4 py-2 rounded-lg backdrop-blur-sm">
                             <span className="text-sm font-medium">Реалност</span>
                         </div>
+                        {/* Counter */}
+                        <div className="absolute bottom-4 right-4 bg-black bg-opacity-60 text-white px-4 py-2 rounded-full text-sm font-semibold z-10 shadow-lg">
+                            {currentPair + 1} / {totalPairs}
+                        </div>
                     </div>
                 </div>
 
                 {/* Navigation Buttons */}
                 <div className="flex justify-center mt-8 space-x-4">
                     <button
-                        onClick={() => setSliderPosition(Math.max(0, sliderPosition - 10))}
+                        onClick={goToPrev}
                         className="w-12 h-12 bg-orange-500 hover:bg-orange-600 text-white rounded-full flex items-center justify-center transition-colors duration-200 shadow-lg"
-                        aria-label="Move slider left"
+                        aria-label="Предишна двойка"
                     >
                         <ChevronLeft className="w-6 h-6" />
                     </button>
                     <button
-                        onClick={() => setSliderPosition(Math.min(100, sliderPosition + 10))}
+                        onClick={goToNext}
                         className="w-12 h-12 bg-orange-500 hover:bg-orange-600 text-white rounded-full flex items-center justify-center transition-colors duration-200 shadow-lg"
-                        aria-label="Move slider right"
+                        aria-label="Следваща двойка"
                     >
                         <ChevronRight className="w-6 h-6" />
                     </button>
@@ -138,7 +153,7 @@ export default function Page() {
                     </p>
                 </div>
             </div>
-            <ContactFormButton/>
+            <ContactFormButton />
         </section>
     );
 }

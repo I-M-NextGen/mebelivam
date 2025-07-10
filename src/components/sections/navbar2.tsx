@@ -33,6 +33,7 @@ import {MaxWidthWrapper} from "@/components/max-width-wrapper"
 import Link from "next/link"
 import {Button} from "@/components/ui/button";
 import {LucideImages, SquareDashedMousePointer} from "lucide-react";
+import scrollToSection from "@/utils/scrollTo";
 
 export const Navbar2 = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -136,14 +137,16 @@ export const Navbar2 = () => {
                     <DialogPanel
                         className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                         <div className="flex items-center justify-between">
-                            <a href="#" className="-m-1.5 p-1.5">
+                            <Link href="/" className="-m-1.5 p-1.5">
                                 <span className="sr-only">Your Company</span>
-                                <img
+                                <Image
                                     alt=""
-                                    src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
-                                    className="h-8 w-auto"
+                                    src="/logo.svg"
+                                    className="w-auto size-15"
+                                    width={150}
+                                    height={150}
                                 />
-                            </a>
+                            </Link>
                             <button
                                 type="button"
                                 onClick={() => setMobileMenuOpen(false)}
@@ -156,10 +159,16 @@ export const Navbar2 = () => {
                         <div className="mt-6 flow-root">
                             <div className="-my-6 divide-y divide-gray-500/10">
                                 <div className="space-y-2 py-6">
+                                    <Link
+                                        href="#services"
+                                        className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                                    >
+                                        Услуги
+                                    </Link>
                                     <Disclosure as="div" className="-mx-3">
                                         <DisclosureButton
                                             className="group flex w-full items-center justify-between rounded-lg py-2 pr-3.5 pl-3 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">
-                                            Product
+                                            Проекти
                                             <ChevronDownIcon aria-hidden="true"
                                                              className="size-5 flex-none group-data-open:rotate-180"/>
                                         </DisclosureButton>
@@ -176,33 +185,23 @@ export const Navbar2 = () => {
                                             ))}
                                         </DisclosurePanel>
                                     </Disclosure>
-                                    <a
-                                        href="#"
+                                    <Link
+                                        href="#about"
                                         className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                                     >
-                                        Features
-                                    </a>
-                                    <a
-                                        href="#"
+                                        За Нас
+                                    </Link>
+                                    <Link
+                                        href="#faq"
                                         className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                                     >
-                                        Marketplace
-                                    </a>
-                                    <a
-                                        href="#"
-                                        className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
-                                    >
-                                        Company
-                                    </a>
+                                        ЧЗВ
+                                    </Link>
                                 </div>
-                                <div className="py-6">
-                                    <a
-                                        href="#"
-                                        className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
-                                    >
-                                        Log in
-                                    </a>
-                                </div>
+                                <Link href="/#contact"><div className="py-6">
+                                    <Button className="cursor-pointer">Свържете се с нас</Button>
+                                </div></Link>
+
                             </div>
                         </div>
                     </DialogPanel>

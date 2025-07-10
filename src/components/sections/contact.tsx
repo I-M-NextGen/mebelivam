@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import {Heading} from "@/components/ui/heading";
 import {Subheading} from "@/components/ui/subheading";
+import Image from "next/image";
 
 export default function Contact() {
     const [formData, setFormData] = useState({
@@ -109,16 +110,17 @@ export default function Contact() {
                     {/* Right Column - Image and Contact Info */}
                     <div className="space-y-8">
                         {/* Image Placeholder */}
-                        <div className="relative">
-                            <div className="w-full h-64 bg-gradient-to-br from-orange-200 to-orange-300 rounded-2xl shadow-lg overflow-hidden">
-                                <div className="w-full h-full bg-gradient-to-br from-orange-300 to-orange-400 flex items-center justify-center">
-                                    <div className="text-orange-700 text-center">
-                                        <div className="text-6xl mb-4">✏️</div>
-                                        <p className="text-lg font-medium">Design Image</p>
-                                        <p className="text-sm opacity-75">Hand drawing plans</p>
-                                    </div>
-                                </div>
-                            </div>
+                        <div className="relative h-64 rounded-2xl shadow-lg overflow-hidden">
+                            <Image src="/mebelivam-img/stock/offer-image.png" fill alt=""/>
+                            {/*<div className="w-full h-64 bg-gradient-to-br from-orange-200 to-orange-300 rounded-2xl shadow-lg overflow-hidden">*/}
+                            {/*    <div className="w-full h-full bg-gradient-to-br from-orange-300 to-orange-400 flex items-center justify-center">*/}
+                            {/*        <div className="text-orange-700 text-center">*/}
+                            {/*            <div className="text-6xl mb-4">✏️</div>*/}
+                            {/*            <p className="text-lg font-medium">Design Image</p>*/}
+                            {/*            <p className="text-sm opacity-75">Hand drawing plans</p>*/}
+                            {/*        </div>*/}
+                            {/*    </div>*/}
+                            {/*</div>*/}
                         </div>
 
                         {/* Contact Info Card */}
@@ -133,10 +135,10 @@ export default function Contact() {
 
                             <div className="text-center">
                                 <a
-                                    href="tel:+35984123579"
-                                    className="inline-block bg-white bg-opacity-20 hover:bg-opacity-30 text-white font-bold py-3 px-8 rounded-lg border-2 border-white border-opacity-50 hover:border-opacity-75 transition-all duration-300"
+                                    href="tel:+359888133513"
+                                    className="inline-block border-white bg-opacity-20 hover:bg-opacity-30 text-white font-bold py-3 px-8 rounded-lg border-2 border-white border-opacity-50 hover:border-opacity-75 transition-all duration-300"
                                 >
-                                    +35984123579
+                                    +359 88 813 3513
                                 </a>
                             </div>
                         </div>

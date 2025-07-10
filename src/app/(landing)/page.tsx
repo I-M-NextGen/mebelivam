@@ -16,7 +16,7 @@ const Page = () => {
     </div>
     <section id="info"><Info/></section>
     <section id="services"><Services/></section>
-    <section><ContactFormButton/></section>
+    <section className="bg-white"><ContactFormButton/></section>
     <section id="about"><About/></section>
     <section id="faq"><FAQ/></section>
     <section id="contact"><Contact/></section>

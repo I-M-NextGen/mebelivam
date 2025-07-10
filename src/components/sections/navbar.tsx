@@ -21,8 +21,8 @@ import Image from "next/image"
 import {LucideImages, SquareDashedMousePointer} from "lucide-react";
 
 const products = [
-    {name: 'Снимки на проекти', description: 'Get a better understanding of your traffic', href: '/images', icon: LucideImages},
-    {name: 'Визуализация срещу реалност', description: 'Speak directly to your customers', href: '/v-vs-r', icon: SquareDashedMousePointer},
+    {name: 'Снимки на проекти', description: 'Разгледайте снимки на нашите проекти', href: '/images', icon: LucideImages},
+    {name: 'Визуализация срещу реалност', description: 'Вижте реализирани модели на проекти', href: '/v-vs-r', icon: SquareDashedMousePointer},
 ]
 const callsToAction = [
     {name: 'Виж видео', href: '#video', icon: PlayCircleIcon},
@@ -66,16 +66,16 @@ export const Navbar = () => {
                     <button
                         type="button"
                         onClick={() => setMobileMenuOpen(true)}
-                        className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+                        className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-100"
                     >
                         <span className="sr-only">Open main menu</span>
                         <Bars3Icon aria-hidden="true" className="size-6"/>
                     </button>
                 </div>
                 <PopoverGroup className="hidden lg:flex lg:gap-x-12">
-                    <a href="#services" className={`text-sm/6 font-semibold ${isScrolled ? 'text-black' : 'text-white'}`}>
+                    <Link href="#services" className={`text-sm/6 font-semibold ${isScrolled ? 'text-black' : 'text-white'}`}>
                         Услуги
-                    </a>
+                    </Link>
                     <Popover className="relative">
                         <PopoverButton className={`flex items-center gap-x-1 text-sm/6 font-semibold ${isScrolled ? 'text-black' : 'text-white'}`}>
                             Проекти
@@ -98,10 +98,10 @@ export const Navbar = () => {
                                                        className="size-6 text-gray-600 group-hover:text-orange-600"/>
                                         </div>
                                         <div className="flex-auto">
-                                            <a href={item.href} className="block font-semibold text-gray-900">
+                                            <Link href={item.href} className="block font-semibold text-gray-900">
                                                 {item.name}
                                                 <span className="absolute inset-0"/>
-                                            </a>
+                                            </Link>
                                             <p className="mt-1 text-gray-600">{item.description}</p>
                                         </div>
                                     </div>
@@ -109,41 +109,43 @@ export const Navbar = () => {
                             </div>
                             <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-orange-100">
                                 {callsToAction.map((item) => (
-                                    <a
+                                    <Link
                                         key={item.name}
                                         href={item.href}
                                         className="flex items-center justify-center gap-x-2.5 p-3 text-sm/6 font-semibold text-gray-900 hover:bg-gray-100"
                                     >
                                         <item.icon aria-hidden="true" className="size-5 flex-none text-gray-400"/>
                                         {item.name}
-                                    </a>
+                                    </Link>
                                 ))}
                             </div>
                         </PopoverPanel>
                     </Popover>
-                    <a href="#" className={`text-sm/6 font-semibold ${isScrolled ? 'text-black' : 'text-white'}`}>
+                    <Link href="#about" className={`text-sm/6 font-semibold ${isScrolled ? 'text-black' : 'text-white'}`}>
                         За Нас
-                    </a>
-                    <a href="#"className={`text-sm/6 font-semibold ${isScrolled ? 'text-black' : 'text-white'}`}>
+                    </Link>
+                    <Link href="#faq"className={`text-sm/6 font-semibold ${isScrolled ? 'text-black' : 'text-white'}`}>
                         ЧЗВ
-                    </a>
+                    </Link>
                 </PopoverGroup>
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                    <Button onClick={() => scrollToSection("contact")}>Свържете се с нас</Button>
+                    <Button onClick={() => scrollToSection("contact")} className="cursor-pointer">Свържете се с нас</Button>
                 </div>
                 <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
                     <div className="fixed inset-0 z-50"/>
                     <DialogPanel
                         className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                         <div className="flex items-center justify-between">
-                            <a href="#" className="-m-1.5 p-1.5">
+                            <Link href="/" className="-m-1.5 p-1.5">
                                 <span className="sr-only">Your Company</span>
-                                <img
+                                <Image
                                     alt=""
-                                    src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
-                                    className="h-8 w-auto"
+                                    src="/logo.svg"
+                                    className="w-auto size-15"
+                                    width={150}
+                                    height={150}
                                 />
-                            </a>
+                            </Link>
                             <button
                                 type="button"
                                 onClick={() => setMobileMenuOpen(false)}
@@ -156,10 +158,16 @@ export const Navbar = () => {
                         <div className="mt-6 flow-root">
                             <div className="-my-6 divide-y divide-gray-500/10">
                                 <div className="space-y-2 py-6">
+                                    <Link
+                                        href="#services"
+                                        className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                                    >
+                                        Услуги
+                                    </Link>
                                     <Disclosure as="div" className="-mx-3">
                                         <DisclosureButton
                                             className="group flex w-full items-center justify-between rounded-lg py-2 pr-3.5 pl-3 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">
-                                            Product
+                                            Проекти
                                             <ChevronDownIcon aria-hidden="true"
                                                              className="size-5 flex-none group-data-open:rotate-180"/>
                                         </DisclosureButton>
@@ -176,32 +184,21 @@ export const Navbar = () => {
                                             ))}
                                         </DisclosurePanel>
                                     </Disclosure>
-                                    <a
-                                        href="#"
+                                    <Link
+                                        href="#about"
                                         className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                                     >
-                                        Features
-                                    </a>
-                                    <a
-                                        href="#"
+                                        За Нас
+                                    </Link>
+                                    <Link
+                                        href="#faq"
                                         className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                                     >
-                                        Marketplace
-                                    </a>
-                                    <a
-                                        href="#"
-                                        className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
-                                    >
-                                        Company
-                                    </a>
+                                        ЧЗВ
+                                    </Link>
                                 </div>
                                 <div className="py-6">
-                                    <a
-                                        href="#"
-                                        className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
-                                    >
-                                        Log in
-                                    </a>
+                                    <Button onClick={() => scrollToSection("contact")} className="cursor-pointer">Свържете се с нас</Button>
                                 </div>
                             </div>
                         </div>

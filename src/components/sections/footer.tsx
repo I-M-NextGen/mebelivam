@@ -2,6 +2,7 @@ import React from 'react';
 import { Phone, MapPin } from 'lucide-react';
 import Link from "next/link";
 import Image from "next/image";
+import scrollToSection from "@/utils/scrollTo";
 
 export default function Footer() {
     return (
@@ -24,21 +25,18 @@ export default function Footer() {
                     <div>
                         <h3 className="text-xl font-semibold text-gray-900 mb-6">МебелиВам</h3>
                         <nav className="space-y-4">
-                            <a href="#" className="block text-gray-600 hover:text-orange-500 transition-colors">
-                                Начало
-                            </a>
-                            <a href="#" className="block text-gray-600 hover:text-orange-500 transition-colors">
-                                За нас
-                            </a>
-                            <a href="#" className="block text-gray-600 hover:text-orange-500 transition-colors">
-                                Галерия
-                            </a>
-                            <a href="#" className="block text-gray-600 hover:text-orange-500 transition-colors">
+                            <button onClick={()=>scrollToSection("services")} className="block text-gray-600 hover:text-orange-500 transition-colors">
                                 Услуги
-                            </a>
-                            <a href="#" className="block text-gray-600 hover:text-orange-500 transition-colors">
+                            </button>
+                            <button onClick={()=>scrollToSection("about")} className="block text-gray-600 hover:text-orange-500 transition-colors">
+                                За нас
+                            </button>
+                            <button onClick={()=>scrollToSection("faq")} className="block text-gray-600 hover:text-orange-500 transition-colors">
+                                ЧЗВ
+                            </button>
+                            <button onClick={()=>scrollToSection("contact")} className="block text-gray-600 hover:text-orange-500 transition-colors">
                                 Оферти
-                            </a>
+                            </button>
                         </nav>
                     </div>
 
@@ -58,7 +56,7 @@ export default function Footer() {
                         <div className="space-y-4">
                             <div className="flex items-center">
                                 <Phone className="w-5 h-5 text-orange-500 mr-3 flex-shrink-0" />
-                                <span className="text-gray-700">+35984123579</span>
+                                <span className="text-gray-700">+359 88 813 3513</span>
                             </div>
                             <div className="flex items-start">
                                 <MapPin className="w-5 h-5 text-orange-500 mr-3 flex-shrink-0 mt-1" />
