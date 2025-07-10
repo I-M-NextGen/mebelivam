@@ -99,7 +99,7 @@ export default function Contact() {
 
                                 <button
                                     onClick={handleSubmit}
-                                    className="w-full bg-gradient-to-r from-orange-400 to-orange-500 text-white font-semibold py-3 px-6 rounded-lg hover:from-orange-500 hover:to-orange-600 transition-all duration-300 shadow-lg hover:shadow-xl"
+                                    className="w-full cursor-pointer bg-gradient-to-r from-orange-400 to-orange-500 text-white font-semibold py-3 px-6 rounded-lg hover:from-orange-500 hover:to-orange-600 transition-all duration-300 shadow-lg hover:shadow-xl"
                                 >
                                     Изпрати запитване
                                 </button>
