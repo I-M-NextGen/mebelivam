@@ -93,6 +93,30 @@ export async function POST(request: Request) {
             return NextResponse.json({ error: 'Неуспешно изпращане на имейл.' }, { status: 500 });
         }
 
+        // 3. Имейл до клиента (user) с templateId 7 и без параметри
+        const clientEmailPayload = {
+            sender: {
+                name: process.env.BREVO_SENDER_NAME,
+                email: process.env.BREVO_SENDER_EMAIL,
+            },
+            to: [{ email: email }],
+            templateId: 7,
+        };
+        const clientRes = await axios.post(
+            'https://api.brevo.com/v3/smtp/email',
+            clientEmailPayload,
+            {
+                headers: {
+                    'api-key': process.env.BREVO_API_KEY!,
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                },
+            }
+        );
+        if (clientRes.status !== 201) {
+            return NextResponse.json({ error: 'Неуспешно изпращане на имейл до клиента.' }, { status: 500 });
+        }
+
         return NextResponse.json({ success: true, message: 'Успешно изпратено!' });
 
     } catch (error: unknown) {
