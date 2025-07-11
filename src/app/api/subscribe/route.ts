@@ -95,15 +95,14 @@ export async function POST(request: Request) {
 
         return NextResponse.json({ success: true, message: 'Успешно изпратено!' });
 
-    } catch (error: any) {
-        // Гарантираме, че винаги връщаме валиден JSON
-        if (error.response && error.response.data) {
-            let msg = error.response.data.message || error.response.data.error || 'Възникна грешка при записване.';
+    } catch (error: unknown) {
+        if (axios.isAxiosError(error) && error.response && error.response.data) {
+            const msg = error.response.data.message || error.response.data.error || 'Възникна грешка при записване.';
             return NextResponse.json(
                 { error: msg },
                 { status: error.response.status }
             );
         }
-        return NextResponse.json({ error: error.message || 'Сървърна грешка' }, { status: 500 });
+        return NextResponse.json({ error: (error as Error).message || 'Сървърна грешка' }, { status: 500 });
     }
 }

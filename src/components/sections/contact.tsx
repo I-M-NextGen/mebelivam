@@ -19,6 +19,10 @@ const schema = z.object({
 
 type ContactFormData = z.infer<typeof schema>;
 
+// type for the response from /api/subscribe
+// (success: boolean, message: string) or (error: string)
+type SubscribeResponse = { success: boolean; message: string };
+
 function toE164(phone: string): string {
     if (phone.startsWith('0')) {
         return '+359' + phone.slice(1);
@@ -34,7 +38,7 @@ export default function Contact() {
         resolver: zodResolver(schema),
     });
 
-    const mutation = useMutation<any, Error, ContactFormData>({
+    const mutation = useMutation<SubscribeResponse, Error, ContactFormData>({
         mutationFn: async (data) => {
             const formattedPhone = toE164(data.phone);
             const res = await fetch("/api/subscribe", {
@@ -45,7 +49,7 @@ export default function Contact() {
             let json;
             try {
                 json = await res.json();
-            } catch (e) {
+            } catch {
                 throw new Error("Грешка при обработка на отговора от сървъра.");
             }
             if (!res.ok) {

@@ -1,5 +1,5 @@
 "use client"
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import ContactFormButton from "@/components/ui/contact-form-button";
 import { Subheading } from "@/components/ui/subheading";
@@ -35,10 +35,10 @@ export default function Page() {
         updateSliderPosition(e);
     };
 
-    const handleMouseMove = (e: MouseEvent) => {
+    const handleMouseMove = useCallback((e: MouseEvent) => {
         if (!isDragging) return;
         updateSliderPosition(e);
-    };
+    }, [isDragging]);
 
     const handleMouseUp = () => {
         setIsDragging(false);
