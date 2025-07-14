@@ -14,12 +14,12 @@ const Page = () => {
     <div>
       <Hero/>
     </div>
-    <section id="info"><Info/></section>
-    <section id="services"><Services/></section>
+    <section id="info" className="section"><Info/></section>
+    <section id="services" className="section"><Services/></section>
     <section className="bg-white"><ContactFormButton/></section>
-    <section id="about"><About/></section>
-    <section id="faq"><FAQ/></section>
-    <section id="contact"><Contact/></section>
+    <section id="about" className="section"><About/></section>
+    <section id="faq" className="section"><FAQ/></section>
+    <section id="contact" className="section"><Contact/></section>
     <section><Footer/></section>
 
   </>

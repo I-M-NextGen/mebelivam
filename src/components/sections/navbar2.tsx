@@ -20,8 +20,8 @@ import {ChevronDownIcon, PhoneIcon, PlayCircleIcon} from '@heroicons/react/20/so
 import Image from "next/image"
 
 const products = [
-    {name: 'Снимки на проекти', description: 'Get a better understanding of your traffic', href: '/images', icon: LucideImages},
-    {name: 'Визуализация срещу реалност', description: 'Speak directly to your customers', href: '/v-vs-r', icon: SquareDashedMousePointer},
+    {name: 'Галерия', description: 'Разгледайте снимки на нашите проекти', href: '/gallery', icon: LucideImages},
+    {name: 'Визуализация срещу реалност', description: 'Вижте реализирани модели на проекти', href: '/v-vs-r', icon: SquareDashedMousePointer},
 ]
 const callsToAction = [
     {name: 'Виж видео', href: '/#video', icon: PlayCircleIcon},
@@ -44,6 +44,19 @@ export const Navbar2 = () => {
         window.addEventListener('scroll', handleScroll)
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
+
+    const scrollToSection = (id) => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
+    const handleMobileNavClick = (id: string) => {
+        setMobileMenuOpen(false);
+        scrollToSection(id);
+    };
+
     return <nav
         className={`sticky z-[100] h-28 inset-x-0 top-0 w-full border-b backdrop-blur-sm transition-all p-4 lg:p-6 
       ${isScrolled ? 'bg-white/40 shadow-md border-gray-300' : 'bg-transparent border-gray-200'}`}
@@ -129,7 +142,7 @@ export const Navbar2 = () => {
                     </Link>
                 </PopoverGroup>
                 <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                    <Link href="/#contact"> <Button>Свържете се с нас</Button></Link>
+                    <Link href="/#contact"> <Button onClick={() => handleMobileNavClick('contact')}>Свържете се с нас</Button></Link>
                 </div>
                 <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
                     <div className="fixed inset-0 z-50"/>
@@ -160,12 +173,14 @@ export const Navbar2 = () => {
                                 <div className="space-y-2 py-6">
                                     <Link
                                         href="/#services"
+                                        onClick={() => handleMobileNavClick('services')}
                                         className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                                     >
                                         Услуги
                                     </Link>
                                     <Disclosure as="div" className="-mx-3">
                                         <DisclosureButton
+                                            onClick={() => handleMobileNavClick('projects')}
                                             className="group flex w-full items-center justify-between rounded-lg py-2 pr-3.5 pl-3 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">
                                             Проекти
                                             <ChevronDownIcon aria-hidden="true"
@@ -175,6 +190,7 @@ export const Navbar2 = () => {
                                             {[...products, ...callsToAction].map((item) => (
                                                 <DisclosureButton
                                                     key={item.name}
+                                                    onClick={() => handleMobileNavClick(item.href.substring(1))}
                                                     as="a"
                                                     href={item.href}
                                                     className="block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50"
@@ -186,19 +202,21 @@ export const Navbar2 = () => {
                                     </Disclosure>
                                     <Link
                                         href="/#about"
+                                        onClick={() => handleMobileNavClick('about')}
                                         className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                                     >
                                         За Нас
                                     </Link>
                                     <Link
                                         href="/#faq"
+                                        onClick={() => handleMobileNavClick('faq')}
                                         className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                                     >
                                         ЧЗВ
                                     </Link>
                                 </div>
                                 <Link href="/#contact"><div className="py-6">
-                                    <Button className="cursor-pointer">Свържете се с нас</Button>
+                                    <Button onClick={() => handleMobileNavClick('contact')} className="cursor-pointer">Свържете се с нас</Button>
                                 </div></Link>
 
                             </div>
