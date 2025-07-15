@@ -7,13 +7,13 @@ import { Heading } from "@/components/ui/heading";
 
 
 const projectImages = [
-    "/mebelivam-img/program-vs-real/1-our-kitchen-program.JPG",
+    // "/mebelivam-img/program-vs-real/1-our-kitchen-program.JPG",
     "/mebelivam-img/program-vs-real/spaska-program.jpg",
     "/mebelivam-img/program-vs-real/2-kitchen-program.JPG",
     "/mebelivam-img/program-vs-real/3-kitchen-program.JPG",
 ]
 const realImages = [
-    "/mebelivam-img/program-vs-real/1-our-kitchen-real.JPG",
+    // "/mebelivam-img/program-vs-real/1-our-kitchen-real.JPG",
     "/mebelivam-img/program-vs-real/spaska-real.jpg",
     "/mebelivam-img/program-vs-real/2-kitchen-real.JPG",
     "/mebelivam-img/program-vs-real/3-kitchen-real.JPG",
