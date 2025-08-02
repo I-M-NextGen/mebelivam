@@ -60,7 +60,7 @@ export default function Footer() {
                             </div>
                             <div className="flex items-start">
                                 <MapPin className="w-5 h-5 text-orange-500 mr-3 flex-shrink-0 mt-1" />
-                                <span className="text-gray-700">гр. Пловдив, България</span>
+                                <span className="text-gray-700">гр. Стара Загора, България</span>
                             </div>
                         </div>
                     </div>

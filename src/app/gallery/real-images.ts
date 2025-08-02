@@ -19,21 +19,6 @@ const realImages = [
   "/mebelivam-img/реални-завършени/IMG_9389.JPG",
   "/mebelivam-img/реални-завършени/IMG_9391.JPG",
   "/mebelivam-img/реални-завършени/IMG_9392.JPG",
-  "/mebelivam-img/реални-завършени/IMG_9394.JPG",
-  "/mebelivam-img/реални-завършени/IMG_9395.JPG",
-  "/mebelivam-img/реални-завършени/IMG_9397.JPG",
-  "/mebelivam-img/реални-завършени/IMG_9404.JPG",
-  "/mebelivam-img/реални-завършени/IMG_9405.JPG",
-  "/mebelivam-img/реални-завършени/IMG_9406.JPG",
-  "/mebelivam-img/реални-завършени/IMG_9407.JPG",
-  "/mebelivam-img/реални-завършени/IMG_9408.JPG",
-  "/mebelivam-img/реални-завършени/IMG_9410.JPG",
-  "/mebelivam-img/реални-завършени/IMG_9411.JPG",
-  "/mebelivam-img/реални-завършени/IMG_9412.JPG",
-  "/mebelivam-img/реални-завършени/IMG_9413.JPG",
-  "/mebelivam-img/реални-завършени/IMG_9414.JPG",
-  "/mebelivam-img/реални-завършени/IMG_9415.JPG",
-  "/mebelivam-img/реални-завършени/IMG_9416.JPG",
 ];
 
 export default realImages; 
