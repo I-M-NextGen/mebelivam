@@ -1,8 +1,4 @@
 # 🪑 Mebelivam
-
-**Mebelivam** is a landing page for a furniture company that specializes in designing and crafting quality furniture.  
-The website is built with **Next.js** and aims to showcase the company’s products, services, and contact information in a modern, user-friendly way.
-
 ---
 
 ## 🚀 Tech Stack
