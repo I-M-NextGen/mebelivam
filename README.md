@@ -9,15 +9,6 @@
 
 ---
 
-## 🧩 Project Structure
-
-- `app/page.tsx` — main landing page  
-- `app/layout.tsx` — global layout wrapper  
-- `public/` — static assets (images, icons, etc.)  
-- `styles/` — global CSS and custom styles  
-
----
-
 ## ⚙️ Getting Started
 
 First, install dependencies:
