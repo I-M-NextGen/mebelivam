@@ -1,5 +1,4 @@
 # 🪑 Mebelivam
----
 
 ## 🚀 Tech Stack
 
